@@ -15,7 +15,7 @@ use Avlyalin\SberbankAcquiring\Models\AcquiringPayment;
 use Avlyalin\SberbankAcquiring\Models\AcquiringPaymentStatus;
 use Avlyalin\SberbankAcquiring\Repositories\AcquiringPaymentRepository;
 use Avlyalin\SberbankAcquiring\Repositories\AcquiringPaymentStatusRepository;
-use Illuminate\Database\Eloquent\Factories\Factory;
+//use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\ServiceProvider;
 
 class AcquiringServiceProvider extends ServiceProvider
@@ -37,7 +37,7 @@ class AcquiringServiceProvider extends ServiceProvider
 
         $this->registerBindings();
 
-        $this->registerEloquentFactories();
+        //$this->registerEloquentFactories();
 
         $this->registerCommands();
     }
@@ -60,11 +60,11 @@ class AcquiringServiceProvider extends ServiceProvider
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    private function registerEloquentFactories()
+/*    private function registerEloquentFactories()
     {
         $factory = $this->app->make(Factory::class);
-        $factory->load(base_path('vendor/avlyalin/laravel-sberbank-acquiring/database/factories'));
-    }
+        $factory->load(base_path('vendor/alexmihel/laravel-sberbank-acquiring/database/factories'));
+    }*/
 
     /**
      * Регистрация биндингов
@@ -77,9 +77,9 @@ class AcquiringServiceProvider extends ServiceProvider
             $httpClient = $app->make(HttpClientInterface::class);
             return new ApiClient(['httpClient' => $httpClient]);
         });
-        $this->app->singleton(PaymentsFactory::class, function ($app) {
+        /*$this->app->singleton(PaymentsFactory::class, function ($app) {
             return new PaymentsFactory();
-        });
+        });*/
         $this->app->singleton(AcquiringPaymentRepository::class, function ($app) {
             return new AcquiringPaymentRepository(new AcquiringPayment());
         });

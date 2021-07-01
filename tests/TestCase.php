@@ -9,7 +9,7 @@ use Avlyalin\SberbankAcquiring\Models\ApplePayPayment;
 use Avlyalin\SberbankAcquiring\Models\GooglePayPayment;
 use Avlyalin\SberbankAcquiring\Models\SamsungPayPayment;
 use Avlyalin\SberbankAcquiring\Models\SberbankPayment;
-use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as Orchestra;
 use ReflectionClass;
